@@ -1,6 +1,6 @@
 services:
   airline-system-database:
-    image: nmesar/ams-sqlserver-database
+    image: nmesar29/ams-sqlserver-database
     container_name: airline-system-database
     ports:
       - "5555:1433"
@@ -12,7 +12,7 @@ services:
     restart: always
     command: /bin/bash /docker-entrypoint-initdb.d/initdatabases.sh && wait  
   airline-system-api:
-    image: nmesar/ams-backend
+    image: nmesar29/ams-backend
     container_name: airline-system-api
     ports:
       - "8080:8080"
@@ -22,7 +22,7 @@ services:
       WAIT_HOSTS: airline-system-database:1433
     restart: on-failure
   airline-system-interface:
-    image: nmesar/ams-frontend
+    image: nmesar29/ams-frontend
     container_name: airline-system-interface
     ports:
       - "9999:80"
