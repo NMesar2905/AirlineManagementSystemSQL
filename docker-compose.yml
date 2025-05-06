@@ -1,16 +1,4 @@
 services:
-  airline-system-database:
-    image: nmesar29/ams-sqlserver-database
-    container_name: airline-system-database
-    ports:
-      - "5555:1433"
-    environment:
-      SA_PASSWORD: "Root123!"
-      ACCEPT_EULA: "Y"
-    volumes:
-      - sqlserver_data:/var/opt/mssql
-    restart: always
-    command: /bin/bash /docker-entrypoint-initdb.d/initdatabases.sh && wait  
   airline-system-api:
     image: nmesar29/ams-backend
     container_name: airline-system-api
