@@ -4,10 +4,6 @@ services:
     container_name: airline-system-api
     ports:
       - "8080:8080"
-    depends_on:
-      - airline-system-database
-    environment:
-      WAIT_HOSTS: airline-system-database:1433
     restart: on-failure
   airline-system-interface:
     image: nmesar29/ams-frontend
