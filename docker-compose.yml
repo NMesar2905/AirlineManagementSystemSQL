@@ -1,12 +1,12 @@
 services:
   airline-system-api:
-    image: nmesar29/ams-backend
+    image: nmesar29/ams-backend:latest
     container_name: airline-system-api
     ports:
       - "8080:8080"
     restart: on-failure
   airline-system-interface:
-    image: nmesar29/ams-frontend
+    image: nmesar29/ams-frontend:latest
     container_name: airline-system-interface
     ports:
       - "9999:80"
